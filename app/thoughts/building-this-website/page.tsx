@@ -33,8 +33,8 @@ export default function BuildingThisWebsite() {
 
         <p>
           The technical choices were pretty deliberate. I went with Next.js for
-          static site generation because it gives me flexibility down the road—I
-          can add dynamic features later if I want, but for now, I'm just
+          static site generation because it gives me flexibility to
+          add dynamic features down the road, but for now, I'm just
           exporting static HTML. The simplicity of a static site means I can
           focus on infrastructure instead of worrying about server-side
           rendering or API routes.
