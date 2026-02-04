@@ -13,7 +13,7 @@ export default function Home() {
           that emphasize correctness, performance, and reliability. Through
           coursework and personal projects, I’m developing a strong foundation
           in how real-world systems behave under load and failure. I’m working
-          toward a career in infrastructure and large-scale systems engineering.
+          toward a career in building large-scale systems.
         </p>
 
         <p>
@@ -27,8 +27,16 @@ export default function Home() {
         <InlineLink href="https://www.linkedin.com/in/nathanielkilonzo/">
           LinkedIn
         </InlineLink>
-        <InlineLink href="/resume.pdf">Resume</InlineLink>
-        <InlineLink href="https://letterboxd.com/nateonfilm/">Letterboxd</InlineLink>
+        <InlineLink
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume
+        </InlineLink>
+        <InlineLink href="https://letterboxd.com/nateonfilm/">
+          Letterboxd
+        </InlineLink>
       </div>
     </>
   );

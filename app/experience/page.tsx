@@ -7,7 +7,7 @@ export default function Experience() {
       <div className="space-y-8">
         {/* Add your experience entries here */}
         <section>
-          <h2 className="mb-2 text-lg font-semibold">Linkedin</h2>
+          <h2 className="mb-2 text-lg font-semibold">LinkedIn</h2>
           <div className="mb-2 text-sm text-neutral-600">
             Software Engineering Intern | Incoming Summer 2026
           </div>

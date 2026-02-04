@@ -7,7 +7,7 @@ export function getAllPosts(): Post[] {
       title: "Building This Website",
       description:
         "Here is what I learned while building it.",
-      date: "Feb 3, 2026",
+      date: "Feb 4, 2026",
     }
   ];
 }
