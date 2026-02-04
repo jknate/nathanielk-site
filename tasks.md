@@ -1,0 +1,15 @@
+- Write articles
+  - I am my career
+  - Shadow Work
+  - Learning to Fly
+  - Inflection points
+  - Startup Culture Changed Me
+  - Composable Code
+  - Rebuilding this Website
+- Add an embed tweet component, can use Vercel's react-tweet
+- Add a video component
+- Add a mermaid renderer component
+- Add a newsletter signup form
+- Add premium subscriptions
+- Related posts?
+- Add a table of contents for long articles

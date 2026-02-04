@@ -1,0 +1,53 @@
+{
+  "name": "nathanielk-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@vercel/og": "^0.6.5",
+    "clsx": "^2.1.1",
+    "feed": "^4.2.2",
+    "framer-motion": "^12.5.0",
+    "jotai": "^2.12.2",
+    "katex": "^0.16.21",
+    "next": "15.2.8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.12.0",
+    "rehype-pretty-code": "^0.14.1",
+    "rehype-stringify": "^10.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.1",
+    "tailwind-merge": "^3.0.2",
+    "unified": "^11.0.5"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@tailwindcss/postcss": "^4.0.14",
+    "@types/node": "^20.11.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^15.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.3.3"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint"
+    ],
+    "**/*.{ts,tsx,js,jsx,css,html,scss,json,yml,yaml}": [
+      "prettier --write --end-of-line auto"
+    ]
+  }
+}
