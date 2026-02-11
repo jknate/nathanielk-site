@@ -1,7 +1,7 @@
 // Feed configuration shared across all feed formats
 export const feedConfig = {
   // Site information
-  siteTitle: "Nathaniel K",
+  siteTitle: "Nathaniel Kilonzo",
   siteDescription:
     "A personal website",
   siteUrl: "https://nathanielk.dev",
