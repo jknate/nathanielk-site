@@ -3,7 +3,7 @@ import InlineLink from "@/components/InlineLink";
 export default function NotFound() {
   return (
     <>
-      <h1 className="mb-8 font-medium text-neutral-900">
+      <h1 className="mb-8 text-2xl font-bold" style={{ color: "var(--color-foreground)" }}>
         404 - Page Not Found
       </h1>
       <p className="mb-4">

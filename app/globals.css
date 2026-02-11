@@ -11,6 +11,16 @@
   --text-2xs: 0.625rem;
   --text-2xs--line-height: calc(0.75 / 0.625);
 
+  /* Blue-based color system */
+  --color-background: hsl(0 0% 99%);
+  --color-foreground: hsl(210 25% 23%);
+  --color-muted-foreground: hsl(210 15% 60%);
+  --color-primary: hsl(210 88% 53%);
+  --color-border: hsl(201 30% 88%);
+  --color-card: hsl(180 6% 97%);
+  --color-muted: hsl(240 8% 92%);
+
+  /* Keep neutral scale for code blocks etc */
   --color-neutral-50: #faf9f5;
   --color-neutral-100: #f5f2ec;
   --color-neutral-200: #e8e6dc;
@@ -38,15 +48,18 @@
 
 @layer base {
   body {
-    background-color: var(--color-neutral-50);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    letter-spacing: -0.011em;
   }
+
   *::selection {
     background-color: color-mix(
       in srgb,
-      var(--color-neutral-500) 10%,
+      var(--color-primary) 15%,
       transparent
     );
-    color: var(--color-neutral-900);
+    color: var(--color-foreground);
   }
 
   em,
@@ -91,7 +104,8 @@
     > [data-line]::before {
     counter-increment: line;
     content: counter(line);
-    @apply mr-4 inline-block w-4 text-right text-neutral-400;
+    @apply mr-4 inline-block w-4 text-right;
+    color: var(--color-muted-foreground);
   }
 
   figure[data-rehype-pretty-code-figure]
@@ -117,7 +131,7 @@
   figure[data-rehype-pretty-code-figure]
     code[data-line-numbers]
     > [data-highlighted-line]::before {
-    @apply text-neutral-600;
+    color: var(--color-foreground);
   }
 
   figure[data-rehype-pretty-code-figure] [data-highlighted-chars] {
@@ -130,7 +144,8 @@
   }
 
   [data-rehype-pretty-code-caption] {
-    @apply mt-2 text-neutral-500;
+    @apply mt-2;
+    color: var(--color-muted-foreground);
   }
 
   [data-rmiz-content="found"] img,
@@ -142,7 +157,7 @@
 
   .katex-display {
     scrollbar-width: thin;
-    scrollbar-color: var(--color-neutral-200) var(--color-neutral-50);
+    scrollbar-color: var(--color-neutral-200) var(--color-background);
     @apply overflow-x-auto overflow-y-hidden;
   }
 
@@ -161,18 +176,68 @@
 
 @layer components {
   .btn {
-    @apply cursor-pointer rounded border border-neutral-400 px-2 py-1 text-xs transition-colors hover:border-neutral-900 hover:text-neutral-900;
+    @apply cursor-pointer rounded px-2 py-1 text-xs transition-colors;
+    border: 1px solid var(--color-border);
+    color: var(--color-muted-foreground);
+  }
+  .btn:hover {
+    border-color: var(--color-foreground);
+    color: var(--color-foreground);
+  }
+
+  /* Link with expanding underline hover */
+  .link {
+    @apply relative inline w-fit rounded py-0.5 transition-colors;
+    color: var(--color-muted-foreground);
+  }
+  .link::after {
+    content: "";
+    @apply absolute inset-x-0 -z-10 w-full rounded transition-all;
+    bottom: 10%;
+    height: 1px;
+    background-color: var(--color-border);
+  }
+  .link:hover::after {
+    height: 80%;
+    background-color: var(--color-muted);
+  }
+
+  /* Post list item hover */
+  .post-link {
+    color: var(--color-muted-foreground);
+    transition: color 0.15s;
+  }
+  .post-link:hover {
+    color: var(--color-foreground);
+  }
+  .post-link:hover .post-link-line {
+    border-color: var(--color-foreground);
+  }
+  .post-link:hover .post-link-date {
+    color: var(--color-foreground);
   }
 }
 
 @layer utilities {
   hr {
-    @apply my-8 border-neutral-200;
+    @apply my-8;
+    border-color: var(--color-border);
   }
 }
 
 @supports (view-transition-name: none) {
   @media not (prefers-reduced-motion: reduce) {
+    ::view-transition-group(crossfade),
+    ::view-transition-group(root) {
+      animation-duration: 0s;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation: none;
+      mix-blend-mode: normal;
+    }
+
     ::view-transition-old(crossfade) {
       animation: hide 0.4s cubic-bezier(0.6, 0, 0.8, 1) forwards;
     }
@@ -187,21 +252,21 @@
 @keyframes hide {
   0% {
     opacity: 1;
-    filter: blur(0);
+    transform: translateY(0);
   }
   100% {
     opacity: 0;
-    filter: blur(4px);
+    transform: translateY(-8px);
   }
 }
 
 @keyframes appear {
   0% {
     opacity: 0;
-    filter: blur(4px);
+    transform: translateY(8px);
   }
   100% {
     opacity: 1;
-    filter: blur(0);
+    transform: translateY(0);
   }
 }

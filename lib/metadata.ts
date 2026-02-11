@@ -11,7 +11,7 @@ export function createMetadata(post: Post): Metadata {
       description: post.description,
       type: "article",
       publishedTime: post.date,
-      url: `${feedConfig.siteUrl}/thoughts/${post.slug}`,
+      url: `${feedConfig.siteUrl}/writing/${post.slug}`,
       images: [
         {
           url: post.coverImage || `/api/og?title=${post.title}`,

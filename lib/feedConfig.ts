@@ -3,12 +3,12 @@ export const feedConfig = {
   // Site information
   siteTitle: "Nathaniel K",
   siteDescription:
-    "A blog about philosophy, technology, spirituality, business, and politics.",
-  siteUrl: "https://nathanielk.me",
+    "A personal website",
+  siteUrl: "https://nathanielk.dev",
 
   // Author information
-  authorName: "Nathaniel K",
-  authorEmail: "hello@nathanielk.me",
+  authorName: "Nathaniel Kilonzo",
+  authorEmail: "nathanielkilonzo1@gmail.com",
 
   // Feed paths
   feedPaths: {
@@ -72,8 +72,8 @@ export function createFeedItems(posts: any[], siteUrl: string) {
 
   return posts.map((post) => ({
     title: post.title,
-    id: `${siteUrl}/thoughts/${post.slug}`,
-    link: `${siteUrl}/thoughts/${post.slug}`,
+    id: `${siteUrl}/writing/${post.slug}`,
+    link: `${siteUrl}/writing/${post.slug}`,
     description: post.description,
     date: new Date(post.date),
     author: [

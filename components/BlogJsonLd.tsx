@@ -23,7 +23,7 @@ export default function BlogJsonLd({ post }: { post: Post }) {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${feedConfig.siteUrl}/thoughts/${post.slug}`,
+      "@id": `${feedConfig.siteUrl}/writing/${post.slug}`,
     },
   };
 

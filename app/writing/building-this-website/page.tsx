@@ -202,9 +202,9 @@ export default function BuildingThisWebsite() {
         <H3>Subdirectory Routing</H3>
 
         <p>
-          Another challenge: <InlineCode code="/thoughts" /> and{" "}
-          <InlineCode code="/experiences" /> returned 403 errors even though{" "}
-          <InlineCode code="/thoughts/index.html" /> worked fine. S3 doesn't
+          Another challenge: <InlineCode code="/writing" /> and{" "}
+          <InlineCode code="/experience" /> returned 403 errors even though{" "}
+          <InlineCode code="/writing/index.html" /> worked fine. S3 doesn't
           automatically serve <InlineCode code="index.html" /> for
           subdirectories like a traditional web server would.
         </p>

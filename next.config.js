@@ -3,25 +3,6 @@ const nextConfig = {
   output: "export",
   trailingSlash: true,
   reactStrictMode: true,
-  async redirects() {
-    return [
-      {
-        source: "/understanding-the-power-of-lisp",
-        destination: "/thoughts/understanding-the-power-of-lisp",
-        permanent: true,
-      },
-      {
-        source: "/building-this-website",
-        destination: "/thoughts/building-this-website",
-        permanent: true,
-      },
-      {
-        source: "/object-collisions-with-canvas",
-        destination: "/thoughts/simulating-object-collisions",
-        permanent: true,
-      },
-    ];
-  },
   experimental: {
     viewTransition: true,
   },

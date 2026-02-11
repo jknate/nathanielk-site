@@ -3,6 +3,7 @@ import { Lora, Inter, JetBrains_Mono } from "next/font/google";
 import { unstable_ViewTransition as ViewTransition } from "react";
 import { feedConfig } from "@/lib/feedConfig";
 import Nav from "@/components/Nav";
+import Clock from "@/components/Clock";
 import "./globals.css";
 
 const inter = Inter({
@@ -41,10 +42,6 @@ export const metadata: Metadata = {
         alt: feedConfig.siteTitle,
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    creator: "@josh_b_rad",
   },
   appleWebApp: {
     title: feedConfig.siteTitle,
@@ -87,37 +84,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title={`${feedConfig.siteTitle} RSS Feed`}
-          href={feedConfig.feedPaths.rss}
-        />
-        <link
-          rel="alternate"
-          type="application/atom+xml"
-          title={`${feedConfig.siteTitle} Atom Feed`}
-          href={feedConfig.feedPaths.atom}
-        />
-        <link
-          rel="alternate"
-          type="application/json"
-          title={`${feedConfig.siteTitle} JSON Feed`}
-          href={feedConfig.feedPaths.json}
-        />
-      </head>
+      <head />
       <body
-        className={`text-sm text-neutral-800 antialiased ${inter.variable} ${lora.variable} ${jetbrainsMono.variable}`}
+        className={`text-[15px] antialiased ${inter.variable} ${lora.variable} ${jetbrainsMono.variable}`}
       >
-        <div className="xs:flex-row xs:p-6 flex flex-col p-4 pb-12 sm:p-12 md:p-24 md:pb-24">
-          <Nav />
-          <main className="xs:pl-6 relative w-full min-w-0 text-justify hyphens-auto sm:max-w-2xl sm:pl-8 md:pl-12">
-            <div className="xs:block absolute top-0 left-0 hidden h-full border-l border-neutral-200" />
-            <ViewTransition name="crossfade">
-              <article className="relative">{children}</article>
-            </ViewTransition>
+        <div className="mx-auto flex min-h-dvh max-w-[60rem] flex-col gap-20 px-4 py-10 sm:px-8 2xl:px-12">
+          <header>
+            <Nav />
+          </header>
+          <main className="flex flex-1 flex-col gap-12">
+            <ViewTransition name="crossfade">{children}</ViewTransition>
           </main>
+          <footer className="flex items-center justify-between">
+            <Clock />
+          </footer>
         </div>
       </body>
     </html>

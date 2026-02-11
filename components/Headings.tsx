@@ -53,7 +53,8 @@ function HeadingLink({
     <a href={`#${id}`} className="group">
       <span
         data-active={active}
-        className="xs:pr-2 absolute -top-px -translate-x-full pr-1 font-serif text-neutral-400 opacity-0 transition-colors transition-opacity group-hover:opacity-100 hover:text-neutral-900 data-[active=true]:text-neutral-900 data-[active=true]:opacity-100"
+        className="xs:pr-2 absolute -top-px -translate-x-full pr-1 font-serif opacity-0 transition-colors transition-opacity group-hover:opacity-100 data-[active=true]:opacity-100"
+        style={{ color: "var(--color-muted-foreground)" }}
         aria-label="Copy link to section"
       >
         §
@@ -72,7 +73,8 @@ export function H1({
   return (
     <h1
       ref={headingRef}
-      className={cn("mb-8 text-left font-medium text-neutral-900", className)}
+      className={cn("mb-8 scroll-m-20 text-left text-2xl font-bold", className)}
+      style={{ color: "var(--color-foreground)" }}
       {...props}
     >
       {props.children}
@@ -90,9 +92,10 @@ export function H2({
     <h2
       ref={headingRef}
       className={cn(
-        "relative mt-8 text-left font-medium text-neutral-900",
+        "relative mt-8 scroll-m-20 text-left text-xl font-bold",
         className,
       )}
+      style={{ color: "var(--color-foreground)" }}
       {...props}
     >
       <HeadingLink
@@ -115,9 +118,10 @@ export function H3({
     <h3
       ref={headingRef}
       className={cn(
-        "relative mt-8 text-left font-medium text-neutral-900",
+        "relative mt-8 scroll-m-20 text-left text-lg font-bold",
         className,
       )}
+      style={{ color: "var(--color-foreground)" }}
       {...props}
     >
       <HeadingLink

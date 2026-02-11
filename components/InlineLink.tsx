@@ -14,7 +14,7 @@ export default function InlineLink({
   }
   return (
     <Link
-      className={cn("underline transition-colors hover:text-black", className)}
+      className={cn("link", className)}
       {...props}
     />
   );
