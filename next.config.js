@@ -1,22 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  trailingSlash: true,
   reactStrictMode: true,
-  experimental: {
-    viewTransition: true,
-  },
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.svg$/i,
-      use: [
-        {
-          loader: "@svgr/webpack",
-        },
-      ],
-    });
-    return config;
+  images: {
+    unoptimized: true,
   },
 };
 
-module.exports = nextConfig;
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+
+module.exports = withBundleAnalyzer(nextConfig);
